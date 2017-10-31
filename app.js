@@ -1,6 +1,8 @@
 var express = require('express')
 var app = express();
-const port = 3000;
+require('dotenv').config()
+const bodyParser = require('body-parser');
+const port = process.env.PORT || 3000;
 
 app.set('view engine', 'hbs')
 
