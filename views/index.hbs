@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
   <title>Reddit Clone</title>
   <link rel="stylesheet" href="/index.css">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
@@ -19,7 +19,10 @@
     <div class='container2'>
       <div class='links'>
         {{#each links}}
-        <h2><span class='votes'>{{this.votes}}</span><a href='{{this.url}}' target='blank'>{{this.linkName}}</h2></a>
+        <h2>
+          <span class='votes'><img class='arrow' src='images/upvote.png'>
+            {{this.votes}}<img src='images/downvote.png' class='arrow'></span><a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
+        </h2>
         {{/each}}
       </div>
       <div>

@@ -31,6 +31,7 @@ a {
 }
 
 .links {
+  
 }
 
 .link {
@@ -50,5 +51,18 @@ a {
 .votes {
   color: gray;
   font-size: 70%;
-  margin: 0px 10px 0px 10px;
+  margin-left: 3px;
+}
+
+.arrow {
+  width: 15px;
+  height: 15px;
+  color: gray;
+}
+
+span {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  flex-wrap: wrap;
 }
