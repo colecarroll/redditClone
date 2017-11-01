@@ -20,9 +20,12 @@ app.use(methodOverride("_method"))
 app.get('/', (req, res)=>{
   queries.getLinks()
   .then(links => {
-    console.log(links)
 res.render('index', { links: links})
   })
+})
+
+app.get('/addlink', (req, res)=>{
+  res.render('addlink')
 })
 
 app.patch('/:id', (req, res, next) => {
