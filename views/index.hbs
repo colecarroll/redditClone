@@ -20,8 +20,15 @@
       <div class='links'>
         {{#each links}}
         <h2>
-          <span class='votes'><img class='arrow' src='images/upvote.png'>
-            {{this.votes}}<img src='images/downvote.png' class='arrow'></span><a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
+          <form class='vote' method="post" action="/{{this.id}}?_method=PATCH">
+          <input disabled type="number" value= '{{this.id}}' name="id">
+          <input disabled type="number" value='{{this.votes}}' name="votes">
+          <span class='votes'><button>Up Vote</button>
+          {{!-- <img class='arrow' src='images/upvote.png'> --}}
+          </span>
+          </form>
+            {{this.votes}}
+          <span><img src='images/downvote.png' class='arrow'></span><a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
         </h2>
         {{/each}}
       </div>
@@ -30,5 +37,6 @@
       </div>
     </div>
   </main>
+  <script src='/main.js'></script>
 </body>
 </html>
