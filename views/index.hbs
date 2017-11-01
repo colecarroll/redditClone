@@ -11,13 +11,20 @@
 <body>
   <header>
     <div class='container1'>
-      <a href='/'><img class='logo' src='images/Reddit-logo.png'></a>
-      <a href='/'><h1>Reddit</h1></a>
+      <a class='logo' href='/'><img class='logo' src='images/Reddit-logo.png'></a>
+      <a class='logo' href='/'><h1>Reddit</h1></a>
     </div>
   </header>
   <main>
     <div class='container2'>
-      <button class='linksubmit'><a class='link' href="/addlink">Submit a New Link</a></button>
+      <div class='links'>
+        {{#each links}}
+        <h2><span class='votes'>{{this.votes}}</span><a href='{{this.url}}' target='blank'>{{this.linkName}}</h2></a>
+        {{/each}}
+      </div>
+      <div>
+        <button class='linksubmit'><a class='link' href="/addlink">Submit a New Link</a></button>
+      </div>
     </div>
   </main>
 </body>
