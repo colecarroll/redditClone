@@ -20,5 +20,20 @@ a {
   flex-direction: row;
   padding: 0px 10px 0px 10px;
   font-family: 'Gloria Hallelujah', cursive;
-  
+}
+
+.container2 {
+
+}
+
+.link {
+  color: #366797;
+  font-size: 125%;
+}
+
+.linksubmit {
+  background-color: #EFF6FD;
+  border: solid 1px grey;
+  border-radius: 3px;
+  padding: 3px 10px 3px 10px;
 }
