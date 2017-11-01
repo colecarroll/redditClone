@@ -28,6 +28,14 @@ app.get('/addlink', (req, res)=>{
   res.render('addlink')
 })
 
+app.post('/addlink', (req, res, next)=>{
+  queries.addLink(req.body)
+  .then(link =>{
+    console.log(link);
+    res.redirect('/')
+  })
+})
+
 app.patch('/:id', (req, res, next) => {
   // console.log('Hello');
 	const id = req.params.id;

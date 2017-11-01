@@ -10,8 +10,14 @@ function updateVote(id, linkData) {
     // .returning(['id','name', 'email','company','position', 'skills','code']);
   }
 
+function addLink(link) {
+  return db('links').insert(link).returning(['id', 'linkName', 'url', 'votes'])
+
+}
+
 
 module.exports = {
   getLinks,
-  updateVote
+  updateVote,
+  addLink
 }
