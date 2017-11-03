@@ -36,10 +36,18 @@ app.post('/addlink', (req, res, next)=>{
   })
 })
 
+app.get('/comments/:id', (req, res, next)=> {
+  const id = req.params.id;
+  queries.getComments(id, req.body)
+  .then(commentData => { console.log(commentData)
+    res.render('comments', { comments: comments})
+  })
+})
+
 app.patch('/:id', (req, res, next) => {
   // console.log('Hello');
 	const id = req.params.id;
-	queries.updateVote(id, req.body)
+	queries.upVote(id, req.body)
 		.then(linkData => { console.log(linkData)
     res.render('index')
   })

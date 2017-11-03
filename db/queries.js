@@ -4,20 +4,23 @@ function getLinks() {
   return db.select('*').from('links').returning(['id', 'linkName', 'url', 'votes'])
 }
 
-function updateVote(id, linkData) {
+function upVote(id, linkData) {
     // Update a user where email matches user email
-    return db.table('links').update(linkData).where('id', id)  
+    return db('links').where('id', id).update('votes', Number(votes) + 1)
     // .returning(['id','name', 'email','company','position', 'skills','code']);
   }
 
 function addLink(link) {
   return db('links').insert(link).returning(['id', 'linkName', 'url', 'votes'])
-
 }
 
+function getComments(comment) {
+  return db.select('*').from('comments').where('link_id', id).returning(['id', 'name', 'content', 'link_id'])
+}
 
 module.exports = {
   getLinks,
-  updateVote,
-  addLink
+  upVote,
+  addLink,
+  getComments
 }

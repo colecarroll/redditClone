@@ -23,14 +23,18 @@
           <form class='vote' method="post" action="/{{this.id}}?_method=PATCH">
           <input disabled type="number" value='{{this.id}}' name="id">
           <input disabled type="number" value='{{this.votes}}' name="votes">
-          <span class='votes'><button type='submit'>Up Vote</button>
+          <span class='votes'>
+            <button type='submit'>Up Vote</button>
           {{!-- <img class='arrow' src='images/upvote.png'> --}}
           </span>
           </form>
             {{this.votes}}
           <span><img src='images/downvote.png' class='arrow'></span><a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
         </h2>
-        <button><a href='#'>Comments</a></button>
+        <form method='get' action="/comments/{{this.id}}">
+          <input type="hidden" name='id' value='{{this.id}}'>
+          <button type='submit'>Comments</button>
+        </form>
         {{/each}}
       </div>
       <div>
@@ -38,6 +42,6 @@
       </div>
     </div>
   </main>
-  <script src='/main.js'></script>
+  {{!-- <script src='/main.js'></script> --}}
 </body>
 </html>
