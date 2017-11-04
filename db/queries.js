@@ -6,7 +6,8 @@ function getLinks() {
 
 function upVote(id, linkData) {
     // Update a user where email matches user email
-    return db('links').where('id', id).update('votes', Number(votes) + 1)
+    return db.table('links').where('id', id).update('votes', Number(linkData.votes)+ 1)
+    // update('votes', linkData[0].votes + 1)
     // .returning(['id','name', 'email','company','position', 'skills','code']);
   }
 

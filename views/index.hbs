@@ -21,10 +21,10 @@
         {{#each links}}
         <h2>
           <form class='vote' method="post" action="/{{this.id}}?_method=PATCH">
-          <input disabled type="number" value='{{this.id}}' name="id">
-          <input disabled type="number" value='{{this.votes}}' name="votes">
+          <input type="hidden" value='{{this.id}}' name="id">
+          <input type="hidden" value='{{this.votes}}' name="votes">
           <span class='votes'>
-            <button type='submit'>Up Vote</button>
+            <button>Up Vote</button>
           {{!-- <img class='arrow' src='images/upvote.png'> --}}
           </span>
           </form>

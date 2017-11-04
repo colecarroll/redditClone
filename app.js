@@ -46,10 +46,10 @@ app.get('/comments/:id', (req, res, next)=> {
 
 app.patch('/:id', (req, res, next) => {
   // console.log('Hello');
-	const id = req.params.id;
+  const id = req.params.id;
 	queries.upVote(id, req.body)
-		.then(linkData => { console.log(linkData)
-    res.render('index')
+		.then(linkData => {
+    res.redirect('/')
   })
 		.catch(err => next(err));
 });
