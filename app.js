@@ -54,6 +54,16 @@ app.patch('/:id', (req, res, next) => {
 		.catch(err => next(err));
 });
 
+app.patch('/dv/:id', (req, res, next) => {
+  // console.log('Hello');
+  const id = req.params.id;
+	queries.downVote(id, req.body)
+		.then(linkData => {
+    res.redirect('/')
+  })
+		.catch(err => next(err));
+});
+
 app.listen(port, () => {
   console.log(`Listening at port ${port}`)
 })

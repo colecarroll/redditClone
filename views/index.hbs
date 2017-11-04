@@ -21,15 +21,23 @@
         {{#each links}}
         <h2>
           <form class='vote' method="post" action="/{{this.id}}?_method=PATCH">
-          <input type="hidden" value='{{this.id}}' name="id">
-          <input type="hidden" value='{{this.votes}}' name="votes">
-          <span class='votes'>
-            <button>Up Vote</button>
-          {{!-- <img class='arrow' src='images/upvote.png'> --}}
-          </span>
+            <input type="hidden" value='{{this.id}}' name="id">
+            <input type="hidden" value='{{this.votes}}' name="votes">
+            <span class='votes'>
+              <button>Up Vote</button>
+            </span>
           </form>
-            {{this.votes}}
-          <span><img src='images/downvote.png' class='arrow'></span><a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
+          
+          {{this.votes}}
+          
+          <form class='vote' method="post" action="/dv/{{this.id}}?_method=PATCH">
+            <input type="hidden" value='{{this.id}}' name="id">
+            <input type="hidden" value='{{this.votes}}' name="votes">
+            <span>
+              <button>Down Vote</button>
+            </span>
+          </form>
+          <a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
         </h2>
         <form method='get' action="/comments/{{this.id}}">
           <input type="hidden" name='id' value='{{this.id}}'>
