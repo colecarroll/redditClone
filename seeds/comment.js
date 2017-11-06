@@ -17,6 +17,12 @@ exports.seed = function(knex, Promise) {
           content: 'Gruden is never coming back to Tampa',
           link_id: 2
         },
+        {
+          id: 3,
+          name: 'Joe',
+          content: 'I would love Gruden back.',
+          link_id: 2
+        }
       ]);
     });
 };

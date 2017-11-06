@@ -1,0 +1,95 @@
+
+
+.logo {
+  width: 50px;
+  margin-right: 5px;
+  text-decoration: none;
+  color: black;
+}
+
+header {
+  margin: -5px -8px 20px -8px;
+  background-color: #CEE3F7;
+  padding: 5px 5px 5px 5px;
+  height: 10vh;
+}
+
+h1 {
+  font-family: 'Gloria Hallelujah', cursive;
+}
+a {
+  text-decoration: none;
+}
+
+.container1 {
+  height: 10vh;
+  display: flex;
+  flex-direction: row;
+  padding: 0px 10px 0px 10px;
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+main {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.container2 {
+  
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+
+.container3 {
+  font-family: Arial, Helvetica, sans-serif;  
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.backtohome {
+  background-color: #EFF6FD;
+  border: solid 1px grey;
+  border-radius: 3px;
+  padding: 3px 10px 3px 10px;
+  height: 5vh;
+  margin-top: 40px;
+  width: 15%;
+}
+
+button {
+  color: #366797;
+}
+
+.link {
+  color: #366797;
+  font-size: 125%;
+}
+
+.commentbox {
+  border: 1px black solid;
+  background-color: #EFF6FD;
+  border-radius: 3px;
+  margin: 10px 10px 10px 10px;
+  padding: 5px 5px 5px 5px;
+}
+
+.username {
+  font-style: italic;
+  color: #FC471E;
+  font-size: 125%;
+}
+
+.content {
+  font-weight: bold;
+}
+
+input, textarea {
+  background-color: #EFF6FD;
+  border-radius: 3px;
+  border: 1px black solid;
+  margin: 10px 10px 10px 10px;
+  font-size: 125%;
+}

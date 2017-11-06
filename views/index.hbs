@@ -42,10 +42,7 @@
           <h2>
             <a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
           </h2>
-          <form method='get' action="/comments/{{this.id}}">
-            <input type="hidden" name='id' value='{{this.id}}'>
-            <button class='commentButton'type='submit'><i class="fa fa-comments" aria-hidden="true"></i></button>
-          </form>
+          <a href='/comments/{{this.id}}'>Comments</a>
       </div>
         {{/each}}
       <div>

@@ -1,0 +1,44 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
+  <title>Reddit: Add a Comment</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="/comments.css">
+  <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class='container1'>
+      <a class='logo' href='/'><img class='logo' src='/images/Reddit-Logo.png'></a>
+      <a class='logo' href='/'><h1>Reddit</h1></a>
+    </div>
+  </header>
+  <main>
+    <div class='container2'>
+      <h2>Comments</h2>
+       {{#each comments}}
+        <div class='commentbox'>
+          <p><span class='username'>{{this.name}}</span> says:</p>
+          <p class='content'>{{this.content}}</p>
+        </div>
+      {{/each}}
+    </div>
+    <div class = 'container3'>
+     <h3>Add a Comment</h3>
+      <form method='post' action="/addComment">
+        <label for="name">Name:</label>
+        <input type="text" name="name" placeholder="Enter Name" required>
+        <label for="content">Comment:</label>
+        <textarea name="content"
+        rows="10" cols="50" placeholder="Enter Your Comment"></textarea>
+        <input type='hidden' name='link_id' 
+        value='{{id}}'>
+        <button class='backtohome'>Submit Comment</button>
+      </form>
+    </div>
+     <button class='backtohome'><a href='/' class='link'>Back to Home</a></button>
+  </main>
+</body>
+</html>

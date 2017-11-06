@@ -36,13 +36,29 @@ app.post('/addlink', (req, res, next)=>{
   })
 })
 
-app.get('/comments/:id', (req, res, next)=> {
-  const id = req.params.id;
-  queries.getComments(id, req.body)
-  .then(commentData => { console.log(commentData)
-    res.render('comments', { comments: comments})
+
+
+app.post('/addComment', (req, res, next)=>{
+  console.log(req.body)
+  queries.addComment(req.body)
+  .then(comment => {
+    console.log(comment)
+    res.redirect('/comments/'+req.body.link_id)
   })
 })
+
+app.get('/comments/:id', (req, res, next)=> {
+  const id = req.params.id;
+  queries.getComments(id)
+    .then(comments=> { console.log(comments)
+          res.render('comments', { 
+            comments: comments,
+            id: id
+          }) 
+        })
+    })
+
+
 
 app.patch('/:id', (req, res, next) => {
   // console.log('Hello');
