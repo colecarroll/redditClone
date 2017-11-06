@@ -5,6 +5,7 @@
   {{!-- <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge"> --}}
   <title>Reddit Clone</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="/index.css">
   <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
 </head>
@@ -16,35 +17,37 @@
     </div>
   </header>
   <main>
+      {{#each links}}
     <div class='container2'>
-      <div class='links'>
-        {{#each links}}
-        <h2>
+        <div class='arrows'>
           <form class='vote' method="post" action="/{{this.id}}?_method=PATCH">
             <input type="hidden" value='{{this.id}}' name="id">
             <input type="hidden" value='{{this.votes}}' name="votes">
             <span class='votes'>
-              <button>Up Vote</button>
+              <button><i class="fa fa-arrow-up" aria-hidden="true"></i></button>
             </span>
           </form>
-          
-          {{this.votes}}
-          
+            
+          <h3>{{this.votes}}</h3>
+            
           <form class='vote' method="post" action="/dv/{{this.id}}?_method=PATCH">
             <input type="hidden" value='{{this.id}}' name="id">
             <input type="hidden" value='{{this.votes}}' name="votes">
             <span>
-              <button>Down Vote</button>
+              <button><i class="fa fa-arrow-down" aria-hidden="true"></i></button>
             </span>
           </form>
-          <a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
-        </h2>
-        <form method='get' action="/comments/{{this.id}}">
-          <input type="hidden" name='id' value='{{this.id}}'>
-          <button type='submit'>Comments</button>
-        </form>
-        {{/each}}
+        </div>
+
+          <h2>
+            <a href='{{this.url}}' target='blank'>{{this.linkName}}</a>
+          </h2>
+          <form method='get' action="/comments/{{this.id}}">
+            <input type="hidden" name='id' value='{{this.id}}'>
+            <button class='commentButton'type='submit'><i class="fa fa-comments" aria-hidden="true"></i></button>
+          </form>
       </div>
+        {{/each}}
       <div>
         <button class='linksubmit'><a class='link' href="/addlink">Submit a New Link</a></button>
       </div>

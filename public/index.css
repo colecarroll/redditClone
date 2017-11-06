@@ -1,3 +1,5 @@
+
+
 .logo {
   width: 50px;
   margin-right: 5px;
@@ -6,7 +8,7 @@
 }
 
 header {
-  margin: -5px -8px 0px -8px;
+  margin: -5px -8px 20px -8px;
   background-color: #CEE3F7;
   padding: 5px 5px 5px 5px;
 }
@@ -27,11 +29,9 @@ a {
   display: flex;
   flex-direction: row;
   font-family: Arial, Helvetica, sans-serif;
-  justify-content: space-between;
-}
-
-.links {
-  
+  flex-wrap: no-wrap;
+  align-items: center;
+  margin-top: 20px;
 }
 
 .link {
@@ -45,7 +45,8 @@ a {
   border-radius: 3px;
   padding: 3px 10px 3px 10px;
   height: 5vh;
-  margin-top: 10px;
+  margin-top: 40px;
+  width: 15%;
 }
 
 .votes {
@@ -60,9 +61,36 @@ a {
   color: gray;
 }
 
+.arrows {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+h3 {
+  margin: 5px 0px 5px 0px;
+}
+
 span {
   display: flex;
   flex-direction: column;
   line-height: 1;
   flex-wrap: wrap;
+}
+
+button {
+  width: 40px;
+  background-color: #EFF6FD;
+  border: solid 1px grey;
+  border-radius: 3px;
+  padding: 3px 10px 3px 10px;
+  height: 5vh;
+}
+
+.commentButton {
+  margin: 5px 5px 5px 5px;
+}
+
+h2 {
+  margin: 5px 5px 5px 10px;
 }
