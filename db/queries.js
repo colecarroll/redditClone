@@ -1,7 +1,7 @@
 const db = require('./connections')
 
 function getLinks() {
-  return db.select('*').from('links').returning(['id', 'linkName', 'url', 'votes'])
+  return db.select('*').from('links').orderBy('votes', 'desc')
 }
 
 function upVote(id, linkData) {
